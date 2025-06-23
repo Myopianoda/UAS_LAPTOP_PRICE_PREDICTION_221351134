@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#FFF6F6"
+    tools:context=".SimulasiActivity">
+
+    <View
+        android:id="@+id/header_background"
+        android:layout_width="match_parent"
+        android:layout_height="80dp"
+        android:background="#D9822B"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
+
+    <ImageButton
+        android:id="@+id/btnBack"
+        android:layout_width="48dp"
+        android:layout_height="48dp"
+        android:src="?attr/homeAsUpIndicator"
+        android:background="?attr/selectableItemBackgroundBorderless"
+        android:contentDescription="Kembali"
+        app:tint="#FFF"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/tvSimulasiTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Prediksi Harga Laptop"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#FFF"
+        app:layout_constraintTop_toTopOf="@id/btnBack"
+        app:layout_constraintBottom_toBottomOf="@id/btnBack"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/header_background"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="8dp"
+                android:layout_marginBottom="24dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:background="#F5F5F5"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Brand:"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+                    <Spinner
+                        android:id="@+id/spinnerBrand"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:minHeight="48dp"
+                        android:backgroundTint="#D9822B"
+                        android:spinnerMode="dropdown"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kecepatan Prosesor (GHz):"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputProcessor"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Range: 1.5 - 4.0 Ghz"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_background"
+                        android:textColor="#333"
+                        android:textColorHint="#999"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ukuran RAM (GB):"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputRAM"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Range: 4GB, 8GB, 16GB, dan 32 GB"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_background"
+                        android:textColor="#333"
+                        android:textColorHint="#999"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Kapasitas Penyimpanan (GB):"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputStorage"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Range: 256GB, 512GB, dan 1000GB"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_background"
+                        android:textColor="#333"
+                        android:textColorHint="#999"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Ukuran Layar (inci):"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputScreen"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Range: 11.0 - 17.0 inci"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_background"
+                        android:textColor="#333"
+                        android:textColorHint="#999"
+                        android:layout_marginBottom="12dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Berat Laptop (kg):"
+                        android:textColor="#333"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:layout_marginBottom="4dp"/>
+                    <EditText
+                        android:id="@+id/inputWeight"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:hint="Range : 2.0 - 5.0 kg"
+                        android:inputType="numberDecimal"
+                        android:padding="12dp"
+                        android:background="@drawable/rounded_background"
+                        android:textColor="#333"
+                        android:textColorHint="#999"
+                        android:layout_marginBottom="12dp"/>
+
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <Button
+                android:id="@+id/btnPrediksi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prediksi Harga"
+                android:backgroundTint="#D9822B"
+                android:textColor="#FFF"
+                android:paddingVertical="12dp"
+                android:textSize="18sp"
+                android:layout_marginBottom="24dp"/>
+
+            <TextView
+                android:id="@+id/txtHasil"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Hasil Prediksi: -"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:textColor="#333"
+                android:gravity="center_horizontal"
+                android:padding="12dp"
+                android:background="@drawable/rounded_background"/>
+        </LinearLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

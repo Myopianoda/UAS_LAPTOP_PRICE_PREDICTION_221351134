@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">Laptop Price Predictor</string>
+    <string name="laptop_price_prediction_link">
+        <![CDATA[
+        <b><a href="https://www.kaggle.com/datasets/mrsimple07/laptoppriceprediction/data"> Laptop Price Prediction </a></b>
+        ]]>
+    </string>
+</resources>
