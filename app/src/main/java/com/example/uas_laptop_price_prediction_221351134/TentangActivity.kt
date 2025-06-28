@@ -16,13 +16,5 @@ class TentangActivity : AppCompatActivity() {
         btnBack.setOnClickListener {
             onBackPressedDispatcher.onBackPressed()
         }
-
-        val tvDatasetLink: TextView = findViewById(R.id.tvDatasetLink)
-        tvDatasetLink.text = Html.fromHtml(
-            getString(R.string.laptop_price_prediction_link),
-            Html.FROM_HTML_MODE_LEGACY
-        )
-        tvDatasetLink.movementMethod = LinkMovementMethod.getInstance()
-        tvDatasetLink.isClickable = true
     }
 }

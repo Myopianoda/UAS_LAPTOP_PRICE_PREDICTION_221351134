@@ -1,191 +1,247 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView
+<androidx.constraintlayout.widget.ConstraintLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#FFF6F6"
-    android:fillViewport="true"
     tools:context=".MainActivity">
 
-    <LinearLayout
-        android:layout_width="match_parent"
+    <!-- Top Guideline -->
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/guideline_top"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:gravity="center_horizontal"
-        android:padding="16dp">
+        android:orientation="horizontal"
+        app:layout_constraintGuide_percent="0.1" />
 
-        <TextView
-            android:id="@+id/tvAppTitle"
-            android:layout_width="wrap_content"
+    <!-- Header Title -->
+    <TextView
+        android:id="@+id/tvAppTitle"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="32dp"
+        android:text="Laptop Price Predictor"
+        android:textAlignment="center"
+        android:textColor="#3E2723"
+        android:textSize="28sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toTopOf="@id/guideline_top"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <!-- Header Subtitle -->
+    <TextView
+        android:id="@+id/tvAppSubtitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Pilih menu di bawah untuk memulai"
+        android:textColor="#666"
+        android:textSize="16sp"
+        app:layout_constraintTop_toBottomOf="@id/tvAppTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <ImageView
+
+        android:id="@+id/ivAppLogo"
+        android:layout_width="240dp"
+        android:layout_height="214dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginBottom="24dp"
+        android:contentDescription="Logo Aplikasi"
+        app:layout_constraintTop_toBottomOf="@id/tvAppSubtitle"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:src="@drawable/logo" />
+
+    <!-- GridLayout untuk 4 menu utama -->
+    <GridLayout
+        android:id="@+id/menu_grid"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:columnCount="2"
+        android:rowCount="2"
+        android:useDefaultMargins="true"
+        android:alignmentMode="alignMargins"
+        android:columnOrderPreserved="false"
+        app:layout_constraintTop_toBottomOf="@id/ivAppLogo"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.9">
+
+        <!-- Card 1: Tentang Aplikasi -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardTentang"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
-            android:text="Laptop Price Predictor"
-            android:textColor="#333"
-            android:textSize="28sp"
-            android:textStyle="bold" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/ic_menu_info_details"
+                    app:tint="#D9822B"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Tentang"
+                    android:textStyle="bold"
+                    android:textColor="#333"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <TextView
-            android:id="@+id/tvAppSubtitle"
-            android:layout_width="wrap_content"
+        <!-- Card 2: Dataset -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardDataset"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Pilih menu di bawah untuk memulai"
-            android:textColor="#666"
-            android:textSize="16sp" />
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/ic_menu_save"
+                    app:tint="#D9822B"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Dataset"
+                    android:textStyle="bold"
+                    android:textColor="#333"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:id="@+id/ivAppLogo"
-            android:layout_width="240dp"
-            android:layout_height="214dp"
-            android:layout_marginTop="24dp"
-            android:layout_marginBottom="24dp"
-            android:contentDescription="Logo Aplikasi"
-            android:src="@drawable/logo" />
+        <!-- Card 3: Fitur -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardFitur"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/ic_menu_sort_by_size"
+                    app:tint="#D9822B"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Fitur"
+                    android:textStyle="bold"
+                    android:textColor="#333"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
 
-        <GridLayout
+        <!-- Card 4: Arsitektur Model -->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cardModel"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_columnWeight="1"
+            android:layout_rowWeight="1"
+            app:cardElevation="6dp"
+            app:cardCornerRadius="16dp"
+            android:clickable="true"
+            android:focusable="true"
+            android:foreground="?android:attr/selectableItemBackground">
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="16dp"
+                android:gravity="center">
+                <ImageView
+                    android:layout_width="50dp"
+                    android:layout_height="50dp"
+                    android:src="@android:drawable/ic_menu_manage"
+                    app:tint="#D9822B"
+                    android:layout_marginBottom="8dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Model"
+                    android:textStyle="bold"
+                    android:textColor="#333"/>
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+    </GridLayout>
+
+    <!-- Card 5: Simulasi (CTA Button) -->
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardSimulasi"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        app:cardElevation="8dp"
+        app:cardCornerRadius="16dp"
+        android:layout_marginTop="24dp"
+        app:cardBackgroundColor="#D9822B"
+        android:clickable="true"
+        android:focusable="true"
+        android:foreground="?android:attr/selectableItemBackground"
+        app:layout_constraintTop_toBottomOf="@id/menu_grid"
+        app:layout_constraintStart_toStartOf="@id/menu_grid"
+        app:layout_constraintEnd_toEndOf="@id/menu_grid">
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:columnCount="2"
-            android:rowCount="2"
-            android:alignmentMode="alignMargins"
-            android:columnOrderPreserved="false">
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardTentang"
-                android:layout_width="0dp"
+            android:orientation="horizontal"
+            android:padding="20dp"
+            android:gravity="center">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@android:drawable/ic_media_play"
+                app:tint="#FFFFFF"
+                android:layout_marginEnd="16dp"/>
+            <TextView
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground">
+                android:text="Mulai Simulasi"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="#FFFFFF"/>
+        </LinearLayout>
+    </androidx.cardview.widget.CardView>
 
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:src="@android:drawable/ic_menu_info_details"
-                        app:tint="#D9822B"
-                        android:layout_marginBottom="8dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Tentang"
-                        android:textStyle="bold"
-                        android:textColor="#333"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardFitur"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:src="@android:drawable/ic_menu_sort_by_size"
-                        app:tint="#D9822B"
-                        android:layout_marginBottom="8dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Fitur"
-                        android:textStyle="bold"
-                        android:textColor="#333"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardModel"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:src="@android:drawable/ic_menu_manage"
-                        app:tint="#D9822B"
-                        android:layout_marginBottom="8dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Model"
-                        android:textStyle="bold"
-                        android:textColor="#333"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-            <androidx.cardview.widget.CardView
-                android:id="@+id/cardSimulasi"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"
-                android:layout_columnWeight="1"
-                android:layout_rowWeight="1"
-                app:cardElevation="8dp"
-                app:cardCornerRadius="12dp"
-                android:layout_margin="12dp"
-                android:clickable="true"
-                android:focusable="true"
-                android:foreground="?android:attr/selectableItemBackground">
-                <LinearLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:orientation="vertical"
-                    android:padding="16dp"
-                    android:gravity="center">
-                    <ImageView
-                        android:layout_width="64dp"
-                        android:layout_height="64dp"
-                        android:src="@android:drawable/ic_media_play"
-                        app:tint="#D9822B"
-                        android:layout_marginBottom="8dp"/>
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="Simulasi"
-                        android:textStyle="bold"
-                        android:textColor="#333"/>
-                </LinearLayout>
-            </androidx.cardview.widget.CardView>
-
-        </GridLayout>
-
-    </LinearLayout>
-</ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>

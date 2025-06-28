@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -74,37 +75,8 @@
                 android:text="Aplikasi ini dirancang untuk memprediksi harga laptop berdasarkan enam parameter penting: brand, kecepatan prosesor, ukuran RAM, kapasitas penyimpanan, ukuran layar, dan berat. Dengan model machine learning, pengguna dapat mensimulasikan input spesifikasi dan melihat estimasi harga laptop yang sesuai."
                 android:textSize="14sp"
                 android:textColor="#666"
-
-                android:layout_marginBottom="6dp"
+                android:layout_marginBottom="20dp"
                 android:lineSpacingExtra="4dp"/>
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:layout_marginTop="16dp"
-                android:layout_marginBottom="16dp">
-
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="Link Dataset: "
-                    android:textSize="16sp"
-                    android:textStyle="bold"
-                    android:textColor="#333"/>
-
-                <TextView
-                    android:id="@+id/tvDatasetLink"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1"
-                    android:text="@string/laptop_price_prediction_link"
-                    android:linksClickable="true"
-                    android:textColorLink="#0000FF"
-                    android:textSize="16sp"
-                    android:textColor="#0000FF"
-                    android:textStyle="normal"/>
-            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
