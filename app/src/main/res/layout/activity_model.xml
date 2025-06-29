@@ -8,6 +8,7 @@
     android:background="#FFF6F6"
     tools:context=".ModelActivity">
 
+    <!-- Header dengan latar belakang dan tombol kembali -->
     <View
         android:id="@+id/header_background"
         android:layout_width="match_parent"
@@ -57,11 +58,12 @@
             android:orientation="vertical"
             android:padding="16dp">
 
+            <!-- Card: Arsitektur Umum -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
@@ -73,7 +75,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Model Machine Learning"
+                        android:text="Arsitektur Machine Learning"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#333333"/>
@@ -82,7 +84,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="Model yang digunakan adalah Artificial Neural Network (ANN) yang dibangun menggunakan TensorFlow dan Keras. Model ini dilatih untuk melakukan prediksi harga laptop berdasarkan spesifikasinya."
+                        android:text="Model prediksi harga laptop ini dibangun menggunakan arsitektur Artificial Neural Network (ANN) untuk tugas regresi. ANN dipilih karena kemampuannya dalam mengenali pola kompleks antara spesifikasi laptop dan harga jualnya. Model ini dikembangkan dengan library TensorFlow dan Keras."
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"
@@ -90,11 +92,12 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Card: EDA (Exploratory Data Analysis) -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
@@ -106,7 +109,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Pre-Processing Data"
+                        android:text="Eksplorasi Data (EDA)"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#333333"/>
@@ -115,7 +118,126 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="8dp"
-                        android:text="1). One-Hot Encoding\nFitur 'Brand' yang bersifat kategorikal diubah menjadi format numerik menggunakan One-Hot Encoding agar dapat diproses oleh model."
+                        android:text="Sebelum membangun model, dilakukan eksplorasi data untuk memahami distribusi dan hubungan antar variabel. Beberapa temuan penting divisualisasikan untuk mendapatkan wawasan."
+                        android:textSize="16sp"
+                        android:textColor="#555555"
+                        android:lineSpacingExtra="4dp"
+                        android:justificationMode="inter_word"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="1). Distribusi Brand"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#444444"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/brand_distribution"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Grafik Distribusi Brand Laptop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="2). Distribusi Harga"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#444444"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/price_distribution"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Grafik Distribusi Harga Laptop"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="3). Harga vs Ukuran RAM"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#444444"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/price_vs_ram"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Grafik Boxplot Harga vs Ukuran RAM"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="4). Harga vs Kapasitas Penyimpanan"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#444444"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/price_vs_storage"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Grafik Scatter Plot Harga vs Kapasitas Penyimpanan"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:text="5). Matriks Korelasi"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#444444"/>
+
+                    <ImageView
+                        android:layout_width="match_parent"
+                        android:layout_height="200dp"
+                        android:layout_marginTop="8dp"
+                        android:src="@drawable/correlation_matrix"
+                        android:scaleType="fitCenter"
+                        android:contentDescription="Heatmap Matriks Korelasi"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Card: Pre-Processing -->
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="16dp"
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Tahap Pre-Processing Data"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#333333"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="1). One-Hot Encoding\nFitur 'Brand' yang bersifat kategorikal (contoh: 'Acer', 'Asus') diubah menjadi format numerik. Setiap merek menjadi kolom terpisah dengan nilai 1 atau 0. Ini memungkinkan model untuk memproses informasi merek secara matematis."
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"
@@ -125,7 +247,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="2). Standarisasi Fitur\nSemua fitur numerik diskalakan menggunakan StandardScaler untuk memastikan setiap fitur memiliki skala yang seragam, sehingga meningkatkan kecepatan dan performa training model."
+                        android:text="2). Standarisasi Fitur\nSemua fitur numerik (seperti kecepatan prosesor, RAM, dll.) diskalakan menggunakan StandardScaler. Proses ini mengubah data sehingga memiliki mean 0 dan standar deviasi 1, yang sangat penting untuk membantu model ANN mencapai konvergensi lebih cepat dan meningkatkan akurasi."
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"
@@ -133,11 +255,12 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Card: Detail Arsitektur Model -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
@@ -149,7 +272,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Modeling ANN"
+                        android:text="Detail Model ANN"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#333333"/>
@@ -178,7 +301,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Layer pertama menerima input dengan 10 fitur. Layer ini memiliki 64 neuron dengan fungsi aktivasi ReLU."
+                        android:text="Layer pertama menerima input dengan 10 fitur (5 fitur numerik + 5 hasil One-Hot-Encoding dari brand). Layer ini memiliki 64 neuron dan menggunakan fungsi aktivasi ReLU untuk memperkenalkan non-linearitas."
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"
@@ -196,7 +319,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Layer tersembunyi kedua juga memiliki 64 neuron dan menggunakan fungsi aktivasi ReLU untuk menangani non-linearitas."
+                        android:text="Layer tersembunyi kedua juga memiliki 64 neuron dengan aktivasi ReLU. Penambahan layer ini membantu model mempelajari pola yang lebih dalam dan kompleks dari data."
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"
@@ -214,7 +337,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Layer output memiliki 1 neuron tanpa fungsi aktivasi, yang dirancang untuk menghasilkan nilai prediksi harga secara langsung (regresi)."
+                        android:text="Layer output hanya memiliki 1 neuron tanpa fungsi aktivasi (linear), karena tugas model ini adalah regresi, yaitu memprediksi satu nilai kontinu (harga laptop)."
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"
@@ -222,11 +345,12 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Card: Evaluasi Model -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
@@ -238,7 +362,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Evaluation (Evaluasi Model)"
+                        android:text="Akurasi &amp; Evaluasi Model"
                         android:textSize="18sp"
                         android:textStyle="bold"
                         android:textColor="#333333"/>
@@ -247,7 +371,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="12dp"
-                        android:text="A). Evaluasi Metrik Kinerja"
+                        android:text="A). Metrik Kinerja"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="#444444"/>
@@ -256,7 +380,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="• MAE: 2005.46\n• MSE: 6,410,338.09\n• RMSE: 2531.86\n• R-squared (R²): 0.93\n\nNilai R² sebesar 0.93 menunjukkan model sangat baik dalam menjelaskan variasi data harga laptop."
+                        android:text="• MAE: 2005.46\n• MSE: 6,410,338.09\n• RMSE: 2531.86\n• R-squared (R²): 0.93\n\nNilai R² sebesar 0.93 (atau 93%) menunjukkan bahwa model ini sangat baik dan mampu menjelaskan 93% variasi dari data harga laptop. Ini mengindikasikan akurasi prediksi yang tinggi."
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"
@@ -275,7 +399,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Kurva loss training dan validasi yang bergerak menurun bersamaan menunjukkan bahwa model belajar dengan baik dan tidak mengalami overfitting."
+                        android:text="Kurva loss untuk data training dan data validasi bergerak menurun secara konsisten, yang menandakan bahwa model belajar dengan baik dari waktu ke waktu dan tidak mengalami overfitting (kondisi di mana model terlalu 'hafal' data training dan buruk pada data baru)."
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"
@@ -294,11 +418,12 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
+            <!-- Card: Deployment (Penerapan Model) -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="16dp"
-                app:cardCornerRadius="8dp"
+                app:cardCornerRadius="12dp"
                 app:cardElevation="6dp">
 
                 <LinearLayout
@@ -318,49 +443,8 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="A). Simulasi Prediksi Model"
-                        android:textSize="16sp"
-                        android:textStyle="bold"
-                        android:textColor="#444444"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="4dp"
-                        android:text="Model diuji dengan data baru untuk mensimulasikan penggunaan di dunia nyata. Berikut adalah kode python yang digunakan:"
-                        android:textSize="16sp"
-                        android:textColor="#555555"
-                        android:lineSpacingExtra="4dp"
-                        android:justificationMode="inter_word"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="12dp"
-                        android:text="new_laptop = np.array([[3.5, 16, 512, 15.6, 2.3, 0, 1, 0, 0, 0]])\nnew_laptop_scaled = scaler.transform(new_laptop)\npredicted_price = model.predict(new_laptop_scaled)"
-                        android:textSize="14sp"
-                        android:textColor="#E8F5E9"
-                        android:background="#2E7D32"
-                        android:padding="12dp"
-                        android:fontFamily="monospace"
-                        android:lineSpacingExtra="4dp"/>
-
-                    <TextView
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="8dp"
-                        android:text="Hasil Prediksi Harga: ₽16,312.67"
-                        android:textSize="16sp"
-                        android:textColor="#2E7D32"
-                        android:textStyle="bold"
-                        android:lineSpacingExtra="4dp"/>
-
-                    <TextView
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="B). Penyimpanan Model &amp; Scaler"
+                        android:text="Penyimpanan Model &amp; Scaler"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="#444444"/>
@@ -368,7 +452,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="4dp"
-                        android:text="Model dan scaler disimpan dalam beberapa format untuk penggunaan di masa depan:\n• laptop_price_model.h5 (Model Keras)\n• laptop_price_prediction.tflite (Model Lite)\n• scaler.pkl (Objek Scaler)"
+                        android:text="Model, scaler, dan parameternya disimpan dalam beberapa format agar dapat diintegrasikan ke dalam aplikasi Android:\n• laptop_price_model.h5 (Model Keras)\n• laptop_price_prediction.tflite (Model Lite untuk Mobile)\n• scaler.pkl (Objek Scaler untuk Pre-processing)\n• scaler_params.json (Parameter scaler dalam format JSON untuk deployment)"
                         android:textSize="16sp"
                         android:textColor="#555555"
                         android:lineSpacingExtra="4dp"

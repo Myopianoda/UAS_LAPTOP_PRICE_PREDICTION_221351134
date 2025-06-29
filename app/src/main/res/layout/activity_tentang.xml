@@ -58,55 +58,84 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <TextView
+            <!-- Storyline-->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="StoryLine"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#333"
-                android:layout_marginBottom="6dp"/>
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                android:layout_marginBottom="16dp">
 
-            <TextView
-                android:id="@+id/tvAboutAppDescription"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Storyline"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:layout_marginBottom="8dp"/>
+
+                    <TextView
+                        android:id="@+id/tvAboutAppDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:justificationMode="inter_word"
+                        android:text="Aplikasi ini dirancang untuk memprediksi harga laptop berdasarkan enam parameter penting: brand, kecepatan prosesor, ukuran RAM, kapasitas penyimpanan, ukuran layar, dan berat. Dengan model machine learning, pengguna dapat mensimulasikan input spesifikasi dan melihat estimasi harga laptop yang sesuai."
+                        android:textSize="16sp"
+                        android:textColor="#666"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Cara Kerja Aplikasi -->
+            <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:justificationMode="inter_word"
-                android:text="Aplikasi ini dirancang untuk memprediksi harga laptop berdasarkan enam parameter penting: brand, kecepatan prosesor, ukuran RAM, kapasitas penyimpanan, ukuran layar, dan berat. Dengan model machine learning, pengguna dapat mensimulasikan input spesifikasi dan melihat estimasi harga laptop yang sesuai."
-                android:textSize="14sp"
-                android:textColor="#666"
-                android:layout_marginBottom="20dp"
-                android:lineSpacingExtra="4dp"/>
+                app:cardCornerRadius="12dp"
+                app:cardElevation="6dp"
+                android:layout_marginBottom="24dp">
 
-            <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Cara Kerja Aplikasi"
-                android:textSize="16sp"
-                android:textStyle="bold"
-                android:textColor="#333"
-                android:layout_marginBottom="6dp"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="16dp">
 
-            <TextView
-                android:id="@+id/tvAboutWorkDescription"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:textAlignment="viewStart"
-                android:text="Terdapat beberapa menu pilihan lain yang dapat dipilih. Pada menu dataset adalah untuk melihat dataset yang digunakan pada aplikasi, Menu Fitur yaitu untuk melihat fitur yang digunakan dalam model data, Menu Model yaitu merupakan proses tahapan proses modeling pada fitur, terakhir menu Simulasi yakni melakukan Simulasi data yang diinputkan agar bisa melihat prediksi harga laptop berdasarkan fitur yang diinputkan. "
-                android:textSize="14sp"
-                android:justificationMode="inter_word"
-                android:textColor="#666"
-                android:layout_marginBottom="6dp"
-                android:lineSpacingExtra="4dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Cara Kerja Aplikasi"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#333"
+                        android:layout_marginBottom="8dp"/>
 
+                    <TextView
+                        android:id="@+id/tvAboutWorkDescription"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Terdapat beberapa menu pilihan lain yang dapat dipilih. Pada menu dataset adalah untuk melihat dataset yang digunakan pada aplikasi, Menu Fitur yaitu untuk melihat fitur yang digunakan dalam model data, Menu Model yaitu merupakan proses tahapan proses modeling pada fitur, terakhir menu Simulasi yakni melakukan Simulasi data yang diinputkan agar bisa melihat prediksi harga laptop berdasarkan fitur yang diinputkan."
+                        android:textSize="16sp"
+                        android:justificationMode="inter_word"
+                        android:textColor="#666"
+                        android:lineSpacingExtra="4dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
+
+            <!-- Credit -->
             <TextView
-                android:layout_width="match_parent"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Made by Rizky Syahrul Maulid"
                 android:textSize="14sp"
-                android:textStyle="bold"
-                android:textColor="#333"
-                android:layout_marginBottom="16dp"/>
+                android:textColor="#888"
+                android:layout_gravity="center_horizontal"/>
 
         </LinearLayout>
     </ScrollView>
