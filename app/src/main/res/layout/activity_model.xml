@@ -441,8 +441,49 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="A). Simulasi Prediksi"
+                        android:textSize="16sp"
+                        android:textStyle="bold"
+                        android:textColor="#444444"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="4dp"
+                        android:text="Model yang telah dilatih kemudian diuji dengan sebuah data baru untuk mensimulasikan penggunaan di dunia nyata dan memastikan outputnya sesuai harapan."
+                        android:textSize="16sp"
+                        android:textColor="#555555"
+                        android:lineSpacingExtra="4dp"
+                        android:justificationMode="inter_word"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="12dp"
+                        android:text="new_laptop = np.array([[3.5, 16, 512, 15.6, 2.3, 0, 1, 0, 0, 0]])\nnew_laptop_scaled = scaler.transform(new_laptop)\npredicted_price = model.predict(new_laptop_scaled)"
+                        android:textSize="10sp"
+                        android:textColor="#E8F5E9"
+                        android:background="#2E7D32"
+                        android:padding="12dp"
+                        android:fontFamily="monospace"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Hasil Prediksi Harga: ₽16,312.67"
+                        android:textSize="16sp"
+                        android:textColor="#2E7D32"
+                        android:textStyle="bold"
+                        android:lineSpacingExtra="4dp"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
                         android:layout_marginTop="16dp"
-                        android:text="Penyimpanan Model &amp; Scaler"
+                        android:text="B). Penyimpanan Model &amp; Scaler"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         android:textColor="#444444"/>
