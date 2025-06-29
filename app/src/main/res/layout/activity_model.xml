@@ -8,7 +8,6 @@
     android:background="#FFF6F6"
     tools:context=".ModelActivity">
 
-    <!-- Header dengan latar belakang dan tombol kembali -->
     <View
         android:id="@+id/header_background"
         android:layout_width="match_parent"
@@ -58,7 +57,6 @@
             android:orientation="vertical"
             android:padding="16dp">
 
-            <!-- Card: Arsitektur Umum -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -92,7 +90,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card: EDA (Exploratory Data Analysis) -->
+            <!-- EDA -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -211,7 +209,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card: Pre-Processing -->
+            <!-- Pre-Processing -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -255,7 +253,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card: Detail Arsitektur Model -->
+            <!-- Detail Model -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -345,7 +343,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card: Evaluasi Model -->
+            <!-- Evaluasi Model -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -418,7 +416,7 @@
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
-            <!-- Card: Deployment (Penerapan Model) -->
+            <!-- Deploy -->
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
